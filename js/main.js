@@ -1,7 +1,8 @@
 let campo = document.getElementById('campo');
 let cella;
 
-for (i=0 ; i<100 ; i++) {
+let i = 0
+while (i<100) {
 
     let cella = document.createElement('div');
     cella.classList.add('cellaBase');
@@ -10,9 +11,10 @@ for (i=0 ; i<100 ; i++) {
     function() {
 
     cella.classList.toggle('clicked');
-    alert('la tua cella è la numero' + cella[is]);
+    alert('la tua cella è la numero' + cella[i]);
 
 })
+i++
 }
 
 

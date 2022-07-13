@@ -28,3 +28,8 @@
     border: black 2px solid;
     background-color: red;
 }
+
+.clicked {
+
+    background-color: green;
+}
