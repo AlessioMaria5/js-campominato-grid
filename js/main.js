@@ -1,8 +1,10 @@
 let campo = document.getElementById('campo');
 let cella;
 
-let i = 0
-while (i<100) {
+
+for (let i= 1 ;i<=100; i++) {
+
+    
 
     let cella = document.createElement('div');
     cella.classList.add('cellaBase');
@@ -10,10 +12,8 @@ while (i<100) {
     cella.addEventListener('click', 
     function() {
     cella.classList.toggle('clicked');
+    console.log(i);
 })
-cella.innerHTML += '<div>'+i+'</div>'
-i++
-
 
 }
 
