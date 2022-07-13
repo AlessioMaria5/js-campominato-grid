@@ -9,12 +9,12 @@ while (i<100) {
     campo.append(cella);
     cella.addEventListener('click', 
     function() {
-
     cella.classList.toggle('clicked');
-    alert('la tua cella è la numero' + cella[i]);
-
 })
+cella.innerHTML += '<div>'+i+'</div>'
 i++
+
+
 }
 
 
