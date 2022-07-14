@@ -2,9 +2,8 @@ let campo = document.getElementById('campo');
 let livello = document.getElementById('diff');
 
 // LEVELS 
-
-let medium = 'Medio'
 let facile = 'Facile'
+let medium = 'Medio'
 let difficile = 'Difficile'
 
 // PUNTEGGIO
@@ -31,8 +30,6 @@ let bottoneStart = document.getElementById('genera');
 numeroPunteggio.innerHTML = "il tuo punteggio è " +punteggioAttuale;
 
 
-
-
 // LE MIE FUNZIONI ///////////////////////////
 
 function incermentoPunteggio(x,y) {
@@ -54,7 +51,7 @@ function level(x,y,z) {
 
         for (let i= 1 ;i<=z; i++) { 
 
-            punteggio.append('');
+            numeroPunteggio.innerHTML = 'il tuo punteggio è ';
 
             let cella = document.createElement('div');
             cella.classList.add('cellaBase');
@@ -69,7 +66,7 @@ function level(x,y,z) {
                 punteggioAttuale++
             }  
             
-            numeroPunteggio.append(punteggioAttuale);  
+            numeroPunteggio.innerHTML = 'il tuo punteggio è '+punteggioAttuale;  
         })
         }
     }
