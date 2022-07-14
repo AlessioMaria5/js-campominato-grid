@@ -1,16 +1,17 @@
 let campo = document.getElementById('campo');
 let livello = document.getElementById('diff');
 
+// LEVELS 
 
+let medium = 'Medio'
+let facile = 'Facile'
+let difficile = 'Difficile'
 
 // PUNTEGGIO
-
 let punteggio = document.getElementById('punteggio');
 let numeroPunteggio = document.createElement('span');
 punteggio.append(numeroPunteggio);
 let punteggioAttuale = '';
-
-
 // PUNTEGGIO
 
 
@@ -21,60 +22,18 @@ let bottoneStart = document.getElementById('genera');
     function(){
 
         campo.innerHTML = '';
-        if(livello.value == 'Difficile'){
-
-            for (let i= 1 ;i<=100; i++) {
-        
-                let cella = document.createElement('div');
-                cella.classList.add('cellaBase');
-                campo.append(cella);
-                cella.addEventListener('click', 
-                function() {
-                cella.classList.toggle('clicked');
-                console.log(i);
-                if(cella.classList.contains('clicked')){
-                    punteggioAttuale++
-                    console.log(punteggioAttuale);
-                }   
-            })
-            }
-        }
-
-        else if(livello.value == 'Facile'){
-
-            for (let i= 1 ;i<=49; i++) {
-                let cella = document.createElement('div');
-                cella.classList.add('cellaBase');
-                cella.style.width = 'calc(100% / 7)'
-                cella.style.height = 'calc(100% / 7)'
-                campo.append(cella);
-                cella.addEventListener('click', 
-                function() {
-                cella.classList.toggle('clicked');
-                console.log(i);
-                if(cella.classList.contains('clicked')){
-                    punteggioAttuale++
-                    console.log(punteggioAttuale);
-                }   
-            })
-            }
-        }
-
-        medium();
-        
-
-        //PUNTEGGIO
-        
-       
+   
+        level(difficile,10,100)
+        level(facile,7,49)
+        level(medium,9,81);      
 })
-
-
-
-
 
 numeroPunteggio.innerHTML = "il tuo punteggio è " +punteggioAttuale;
 
 
+
+
+// LE MIE FUNZIONI ///////////////////////////
 
 function incermentoPunteggio(x,y) {
 
@@ -87,20 +46,20 @@ function incermentoPunteggio(x,y) {
 }
 
 
-function medium() {
+function level(x,y,z) {
 
-    if(livello.value == 'Medio'){
+    if(livello.value == `${x}`){
 
         
 
-        for (let i= 1 ;i<=81; i++) { 
-            
-            punteggioAttuale = '';
+        for (let i= 1 ;i<=z; i++) { 
+
+            punteggio.append('');
 
             let cella = document.createElement('div');
             cella.classList.add('cellaBase');
-            cella.style.width = 'calc(100% / 9)'
-            cella.style.height = 'calc(100% / 9)'
+            cella.style.width = `calc(100% /${y})`
+            cella.style.height = `calc(100% /${y})`
             campo.append(cella);
             cella.addEventListener('click', 
             function () {
@@ -108,9 +67,9 @@ function medium() {
             console.log(i); 
             if(cella.classList.contains('clicked')){
                 punteggioAttuale++
-                numeroPunteggio.append(punteggioAttuale);
-            }   
+            }  
             
+            numeroPunteggio.append(punteggioAttuale);  
         })
         }
     }

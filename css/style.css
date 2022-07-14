@@ -23,8 +23,6 @@
 
 .cellaBase {
 
-    width: calc(100% / 10);
-    height: calc(100% / 10);
     border: rgb(220, 220, 220) 0.5px solid;
     background-color: rgb(193, 94, 94);
 }
