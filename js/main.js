@@ -51,6 +51,10 @@ let bottoneStart = document.getElementById('genera');
                 function() {
                 cella.classList.toggle('clicked');
                 console.log(i);
+                if(cella.classList.contains('clicked')){
+                    punteggioAttuale++
+                    console.log(punteggioAttuale);
+                }   
             })
             }
         }
@@ -66,7 +70,11 @@ let bottoneStart = document.getElementById('genera');
                 cella.addEventListener('click', 
                 function() {
                 cella.classList.toggle('clicked');
-                console.log(i);          
+                console.log(i); 
+                if(cella.classList.contains('clicked')){
+                    punteggioAttuale++
+                    console.log(punteggioAttuale);
+                }            
             })
             }
         }
